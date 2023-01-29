@@ -11,7 +11,9 @@ life는 단어길이의 70%를 기준으로 주어집니다.
 
 ### CSS 적용
 <center>
-  <h1>Start</h1>
+  '''
+  Start
+  '''
   <img width="1440" alt="image" src="https://user-images.githubusercontent.com/58070803/215347627-34fe1ad4-9f7b-40ce-be7a-d79b0ae91a5f.png">
     <h1>정답</h1>
   <img width="1440" alt="image" src="https://user-images.githubusercontent.com/58070803/215347778-e88fbf4e-9967-401a-bda7-d4d31baa60f5.png">
