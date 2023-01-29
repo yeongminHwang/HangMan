@@ -1,8 +1,10 @@
 const WORDS = ["apple", "banana", "orange", "pineapple"];
+let cur_word = null;
 
 const startHangMan = () => {
   const word_index = Math.floor(Math.random() * WORDS.length);
   const word = WORDS[word_index];
+  cur_word = word;
 
   const content_container =
     document.getElementsByClassName("content_container")[0];
@@ -108,9 +110,14 @@ const keypressEvent = (e) => {
         HP_container.appendChild(HP_form);
       } else {
         // Life가 Zero인 경우
-        for (var i = 0; i < hidden_word.length; i++) {
-          hidden_word[i].innerHTML = hidden_word[i].classList[0];
+        while (hidden_word_container.firstChild) {
+          hidden_word_container.removeChild(hidden_word_container.lastChild);
         }
+
+        const answer_div = document.createElement("div");
+        answer_div.innerHTML = cur_word;
+
+        hidden_word_container.appendChild(answer_div);
 
         const reset_btn = createReset_Btn();
 
@@ -121,6 +128,7 @@ const keypressEvent = (e) => {
     }
   }
 };
+
 // 단어 길이를 이용해서 게임 life 설정
 const getHpByWord = (word) => {
   const HP = Math.floor(word.length * 0.6);
